@@ -9,8 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function Navbar() {
   const routes = [
-    { href: "/", label: "Home" },
-    { href: "#about", label: "About" },
+    { href: "#about", label: "About Me" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
@@ -18,28 +17,23 @@ export function Navbar() {
 
   return (
     <header className="fixed top-4 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full border bg-background/80 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center pl-6 pr-2.5 gap-6">
-        <div className="hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-bold sm:inline-block">Portfolio</span>
-          </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {routes.map((route) => (
-              <Link
-                key={route.href}
-                href={route.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-              >
-                {route.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+      <div className="flex h-14 items-center pl-6 pr-2.5 gap-4">
+        <nav className="flex items-center space-x-6 text-sm font-medium">
+          {routes.map((route) => (
+            <Link
+              key={route.href}
+              href={route.href}
+              className="transition-colors hover:text-foreground/80 text-foreground/60 whitespace-nowrap"
+            >
+              {route.label}
+            </Link>
+          ))}
+        </nav>
         <Sheet>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
-              className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+              className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 hidden"
             >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle Menu</span>

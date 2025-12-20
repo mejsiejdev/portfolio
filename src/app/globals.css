@@ -126,4 +126,21 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  section,
+  motion.section {
+    @apply container flex flex-col gap-6;
+  }
+}
+
+h2 {
+  @apply text-5xl tracking-tighter;
+}
+
+h3 {
+  @apply text-3xl tracking-tighter;
+}
+
+.text-paragraph {
+  @apply text-lg text-muted-foreground leading-relaxed;
 }

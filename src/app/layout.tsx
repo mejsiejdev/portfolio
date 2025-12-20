@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${dmSans.className} antialiased`}>
+    <html lang="en" className={`${dmSans.className} antialiased`}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -32,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScroll>
-            <div className="relative flex min-h-screen flex-col">
+            <div className="relative flex min-h-screen flex-col items-center">
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />

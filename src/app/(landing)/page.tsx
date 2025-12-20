@@ -1,16 +1,16 @@
-import { Hero } from "./components/hero";
-import { About } from "./components/about";
-import { Skills } from "./components/skills";
-import { Projects } from "./components/projects";
-import { Contact } from "./components/contact";
+import { Hero } from "./sections/hero";
+import { About } from "./sections/about";
+import { Skills } from "./sections/skills";
+import { Projects } from "./sections/projects";
+import { Contact } from "./sections/contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-16 p-6 md:p-8">
       <Hero />
       <About />
-      <Skills />
       <Projects />
+      <Skills />
       <Contact />
     </div>
   );

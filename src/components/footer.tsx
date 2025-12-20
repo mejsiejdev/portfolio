@@ -1,29 +1,33 @@
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 export function Footer() {
   return (
-    <footer className="border-t py-6 md:py-0">
-      <div className="container mx-auto px-4 flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
-        <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          Built by{" "}
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            Frontend Developer
-          </a>
-          . The source code is available on{" "}
-          <a
-            href="https://github.com/yourusername/portfolio"
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            GitHub
-          </a>
-          .
-        </p>
+    <footer className="px-6 md:px-8 pb-6 md:pb-8 flex flex-row w-full items-center justify-center">
+      <div className="container flex gap-4 flex-col md:flex-row">
+        <Link
+          href="https://github.com/mejsiejdev"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 group"
+        >
+          <Avatar className="h-8 w-8">
+            <AvatarImage src="/pfp.jpg" alt="Maciej Malinowski" />
+            <AvatarFallback>MM</AvatarFallback>
+          </Avatar>
+          <p className="text-sm font-medium text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+            Made by Maciej Malinowski
+          </p>
+        </Link>
+        <Link
+          href="https://github.com/mejsiejdev/portfolio"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          See this website's source code on Github
+        </Link>
       </div>
     </footer>
-  )
+  );
 }
