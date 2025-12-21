@@ -14,13 +14,14 @@ import {
 export function Navbar() {
   const routes = [
     { href: "#projects", label: "Projects" },
+    { href: "#certificates", label: "Certificates" },
     { href: "#skills", label: "Skills" },
-    { href: "#contact", label: "Contact" },
     {
       href: "/Maciej_Malinowski_Resume.pdf",
       label: "Resume",
       target: "_blank",
     },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
