@@ -17,7 +17,7 @@ export function Skills() {
       id="skills"
     >
       <h2>Skills</h2>
-      <div className="flex flex-wrap gap-4 max-w-4xl">
+      <div className="flex flex-wrap gap-4">
         {skills
           .filter((skill) => skill.icon)
           .map((skill, index) => {

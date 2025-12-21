@@ -28,6 +28,13 @@ export const skills: Skill[] = [
     href: "https://www.typescriptlang.org",
   },
   {
+    name: "JavaScript",
+    icon: "/logo/javascript.svg",
+    color:
+      "bg-[#F7DF1E]/10 text-[#F7DF1E] hover:bg-[#F7DF1E]/20 border-[#F7DF1E]/20",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
     name: "Tailwind CSS",
     icon: "/logo/tailwindcss.svg",
     color:

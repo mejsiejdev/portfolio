@@ -22,7 +22,7 @@ const projects: {
   {
     name: "Eventownik",
     description:
-      "App that makes creating and managing events for the academic community easier.",
+      "App that streamlines event management for the academic community.",
     image: "/projects/eventownik.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     demo: "https://eventownik.solvro.pl",
@@ -30,7 +30,7 @@ const projects: {
   },
   {
     name: "PromoCHATor",
-    description: "Helps you find your ideal thesis supervisor.",
+    description: "Tool that helps you find your ideal thesis supervisor.",
     image: "/projects/promochator.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     demo: "https://promochator.solvro.pl",
@@ -38,7 +38,8 @@ const projects: {
   },
   {
     name: "Eurolinks Projects",
-    description: "Website of a Erasmus Mobility provider.",
+    description:
+      "Modern website with integrated headless CMS for Erasmus Mobility provider.",
     image: "/projects/eurolinks.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "DatoCMS"],
     demo: "https://eurolinksprojects.com",

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function About() {
   return (
@@ -23,14 +24,35 @@ export function About() {
           Next.js, TypeScript and Tailwind CSS.
         </p>
         <p>
-          Currently I am part of Solvro Science Club, a strategic student-run
-          software house at Wrocław Univesity of Science and Technology, where
-          together with other talented students we develop apps that aim to make
-          the academic life of students easier.
+          Currently I am part of{" "}
+          <Link
+            href="https://solvro.pwr.edu.pl/"
+            target="_blank"
+            className="hover:text-primary transition-colors font-medium"
+          >
+            Solvro Science Club
+          </Link>
+          , a strategic student-run software house at{" "}
+          <Link
+            href="https://pwr.edu.pl/en/"
+            target="_blank"
+            className="hover:text-primary transition-colors font-medium"
+          >
+            Wrocław University of Science and Technology
+          </Link>
+          , where together with other talented students we develop apps that aim
+          to make the academic life of students easier.
         </p>
         <p>
-          When I'm not coding, I am creating music under my producer alias,
-          Coegi.
+          When I'm not coding, I am creating music under my producer alias,{" "}
+          <Link
+            href="https://linktr.ee/coegi"
+            target="_blank"
+            className="hover:text-primary transition-colors font-medium"
+          >
+            Coegi
+          </Link>
+          .
         </p>
       </div>
     </motion.section>

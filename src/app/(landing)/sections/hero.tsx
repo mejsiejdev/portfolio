@@ -23,8 +23,23 @@ export function Hero() {
           Hello, I'm <span className="text-primary">Maciej</span>
         </h1>
         <p className="text-paragraph">
-          I am a Frontend Developer at Solvro Science Club and Cybersecurity
-          student at Wrocław University of Science and Technology.
+          I am a Frontend Developer at{" "}
+          <Link
+            href="https://solvro.pwr.edu.pl/"
+            target="_blank"
+            className="hover:text-primary transition-colors font-medium"
+          >
+            Solvro Science Club
+          </Link>{" "}
+          and Cybersecurity student at{" "}
+          <Link
+            href="https://pwr.edu.pl/en/"
+            target="_blank"
+            className="hover:text-primary transition-colors font-medium"
+          >
+            Wrocław University of Science and Technology
+          </Link>
+          .
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl items-center justify-start">

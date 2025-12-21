@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function Footer() {
   return (
-    <footer className="px-6 md:px-8 pb-6 md:pb-8 flex flex-row w-full items-center justify-center">
+    <footer className="p-6 md:p-8 flex flex-row w-full items-center justify-center">
       <div className="container flex gap-4 flex-col md:flex-row">
         <Link
           href="https://github.com/mejsiejdev"
