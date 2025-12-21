@@ -41,6 +41,7 @@ import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { Background } from "@/components/background";
 
 export default function RootLayout({
   children,
@@ -56,6 +57,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Background />
           <SmoothScroll>
             <div className="relative flex min-h-screen flex-col items-center">
               <main className="flex-1 p-6 md:p-8">{children}</main>

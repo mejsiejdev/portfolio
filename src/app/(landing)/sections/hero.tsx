@@ -20,7 +20,7 @@ export function Hero() {
       </Avatar>
       <div className="flex flex-col gap-4">
         <h1 className="text-5xl tracking-tighter">
-          Hello, I'm <span className="text-primary">Maciej</span>
+          Hello, I'm <span className="text-sky-500">Maciej</span>
         </h1>
         <p className="text-paragraph">
           I am a Frontend Developer at{" "}
