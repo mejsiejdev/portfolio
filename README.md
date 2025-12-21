@@ -19,7 +19,7 @@ Portfolio website built with the latest web technologies to showcase my projects
 
 ## Features
 
-- **Responsive Design**: Fully responsive layout that adapting to all screen sizes.
+- **Responsive Design**: Fully responsive layout adapting to all screen sizes.
 - **Dark Mode**: Built-in support for light and dark themes using `next-themes`.
 - **Smooth Animations**: Interactive elements and page transitions powered by Framer Motion.
 - **Contact Form**: Functional contact form integrated with `nodemailer` and `react-hook-form` + `zod` validation.
