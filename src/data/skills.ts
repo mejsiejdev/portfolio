@@ -55,18 +55,12 @@ export const skills: Skill[] = [
       "bg-[#ff7751]/10 text-[#ff7751] hover:bg-[#ff7751]/20 border-[#ff7751]/20",
     href: "https://www.datocms.com",
   },
-  // Projects only skills
   {
-    name: "Shadcn UI",
+    name: "Python",
+    icon: "/logo/python.svg",
     color:
-      "bg-zinc-950/5 text-zinc-950 dark:bg-zinc-50/10 dark:text-zinc-50 hover:bg-zinc-950/10 dark:hover:bg-zinc-50/20 border-zinc-950/10 dark:border-zinc-50/20",
-    href: "https://ui.shadcn.com",
-  },
-  {
-    name: "Framer Motion",
-    color:
-      "bg-[#F000B8]/10 text-[#F000B8] hover:bg-[#F000B8]/20 border-[#F000B8]/20",
-    href: "https://www.framer.com/motion",
+      "bg-[#3776AB]/10 text-[#3776AB] hover:bg-[#3776AB]/20 border-[#3776AB]/20",
+    href: "https://www.python.org",
   },
 ];
 
