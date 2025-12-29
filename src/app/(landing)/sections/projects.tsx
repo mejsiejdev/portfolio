@@ -15,6 +15,7 @@ const projects: {
   name: string;
   description: string;
   image: string;
+  imageDark?: string;
   tags: string[];
   demo: string;
   code?: string;
@@ -24,6 +25,7 @@ const projects: {
     description:
       "App that streamlines event management for the academic community.",
     image: "/projects/eventownik.jpg",
+    imageDark: "/projects/eventownik-dark.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     demo: "https://eventownik.solvro.pl",
     code: "https://github.com/Solvro/web-eventownik-v2",
@@ -49,6 +51,7 @@ const projects: {
     description:
       "Mini visualization tool for data from the Open Trivia DB API.",
     image: "/projects/open-trivia-db-visualizer.jpg",
+    imageDark: "/projects/open-trivia-db-visualizer-dark.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     demo: "https://open-trivia-db-visualizer.vercel.app",
     code: "https://github.com/mejsiejdev/Open-Trivia-DB-Visualizer",
@@ -75,13 +78,20 @@ export function Projects() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="flex flex-col gap-6"
           >
-            <Image
-              src={project.image}
-              alt={project.name}
-              className="w-full h-auto aspect-video bg-neutral-100 dark:bg-neutral-700 rounded-lg"
-              width={1000}
-              height={1000}
-            />
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-700">
+              <Image
+                src={project.image}
+                alt={project.name}
+                className="object-cover dark:hidden"
+                fill
+              />
+              <Image
+                src={project.imageDark || project.image}
+                alt={project.name}
+                className="hidden object-cover dark:block"
+                fill
+              />
+            </div>
             <div className="space-y-2">
               <h3>{project.name}</h3>
               <p className="text-paragraph">{project.description}</p>
