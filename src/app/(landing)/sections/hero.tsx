@@ -60,7 +60,10 @@ export function Hero() {
           size={"lg"}
           asChild
         >
-          <Link href="https://linkedin.com" target="_blank">
+          <Link
+            href="https://www.linkedin.com/in/maciej-malinowski-8a5807239/"
+            target="_blank"
+          >
             <div className="relative h-5 w-5">
               <Image src="/logo/linkedin.png" alt="LinkedIn" fill />
             </div>
