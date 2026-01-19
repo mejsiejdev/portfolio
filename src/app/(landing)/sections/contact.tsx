@@ -23,6 +23,13 @@ const formSchema = z.object({
   }),
 });
 
+const fadeInAnimation = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
+
 export function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,13 +51,7 @@ export function Contact() {
   }
 
   return (
-    <motion.section
-      id="contact"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
+    <motion.section {...fadeInAnimation} id="contact">
       <h2>Get in Touch</h2>
       <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

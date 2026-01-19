@@ -8,7 +8,7 @@ export function Footer() {
         <Link
           href="https://github.com/mejsiejdev"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 group"
         >
           <Avatar className="h-8 w-8">
@@ -22,10 +22,10 @@ export function Footer() {
         <Link
           href="https://github.com/mejsiejdev/portfolio"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
         >
-          See this website's source code on Github
+          See this website&apos;s source code on Github
         </Link>
       </div>
     </footer>

@@ -11,19 +11,19 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function Navbar() {
-  const routes = [
-    { href: "#projects", label: "Projects" },
-    { href: "#certificates", label: "Certificates" },
-    { href: "#skills", label: "Skills" },
-    {
-      href: "/Maciej_Malinowski_Resume.pdf",
-      label: "Resume",
-      target: "_blank",
-    },
-    { href: "#contact", label: "Contact" },
-  ];
+const routes = [
+  { href: "#projects", label: "Projects" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#skills", label: "Skills" },
+  {
+    href: "/Maciej_Malinowski_Resume.pdf",
+    label: "Resume",
+    target: "_blank" as const,
+  },
+  { href: "#contact", label: "Contact" },
+];
 
+export function Navbar() {
   return (
     <header className="fixed top-4 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full border bg-background/80 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 items-center pl-2.5 sm:pl-6 pr-2.5 gap-2 sm:gap-4">

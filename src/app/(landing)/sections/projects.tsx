@@ -58,24 +58,32 @@ const projects: {
   },
 ];
 
+const sectionAnimation = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
+
+const cardAnimation = (index: number) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.4, delay: index * 0.1 },
+});
+
+// Create Map for O(1) skill lookups
+const skillsMap = new Map(allSkills.map((s) => [s.name, s]));
+
 export function Projects() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      id="projects"
-    >
+    <motion.section {...sectionAnimation} id="projects">
       <h2>Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
+            {...cardAnimation(index)}
             className="flex flex-col gap-6"
           >
             <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-700">
@@ -84,26 +92,29 @@ export function Projects() {
                 alt={project.name}
                 className="object-cover dark:hidden"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <Image
                 src={project.imageDark || project.image}
                 alt={project.name}
                 className="hidden object-cover dark:block"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <div className="space-y-2">
               <h3>{project.name}</h3>
               <p className="text-paragraph">{project.description}</p>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-auto lg:mt-auto lg:mb-0">
               {project.tags.map((tag) => {
-                const skill = allSkills.find((s) => s.name === tag);
+                const skill = skillsMap.get(tag);
                 return (
                   <Link
                     key={tag}
                     href={skill?.href || "#"}
                     target={skill?.href ? "_blank" : undefined}
+                    rel={skill?.href ? "noopener noreferrer" : undefined}
                     className={!skill?.href ? "cursor-default" : ""}
                   >
                     <Badge
@@ -134,13 +145,21 @@ export function Projects() {
                 asChild
                 className={cn("flex-1", !project.code && "col-span-2")}
               >
-                <Link href={project.demo} target="_blank">
+                <Link
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ExternalLink className="mr-2 h-5 w-5" /> View website
                 </Link>
               </Button>
               <Activity mode={project.code ? "visible" : "hidden"}>
                 <Button variant="outline" size="lg" asChild className="flex-1">
-                  <Link href={project.code!} target="_blank">
+                  <Link
+                    href={project.code!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src="/logo/github.svg"
                       alt="GitHub"

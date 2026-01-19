@@ -3,15 +3,19 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const fadeInAnimation = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
+
 export function About() {
   return (
     <motion.section
+      {...fadeInAnimation}
       id="about"
       className="container flex flex-col gap-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
     >
       <h2>About Me</h2>
       <div className="space-y-6 text-paragraph">
@@ -20,7 +24,7 @@ export function About() {
           love for clean, efficient code. My journey in web development started
           back in highschool where I got introduced to HTML and CSS and one of
           the teachers mentioned JavaScript frameworks - I dug deeper into them,
-          found Fireship's Youtube channel and picked up technologies like
+          found Fireship&apos;s Youtube channel and picked up technologies like
           Next.js, TypeScript and Tailwind CSS.
         </p>
         <p>
@@ -28,6 +32,7 @@ export function About() {
           <Link
             href="https://solvro.pwr.edu.pl/"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors font-medium"
           >
             Solvro Science Club
@@ -36,6 +41,7 @@ export function About() {
           <Link
             href="https://pwr.edu.pl/en/"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors font-medium"
           >
             Wrocław University of Science and Technology
@@ -44,10 +50,11 @@ export function About() {
           to make the academic life of students easier.
         </p>
         <p>
-          When I'm not coding, I am creating music under my producer alias,{" "}
+          When I&apos;m not coding, I am creating music under my producer alias,{" "}
           <Link
             href="https://linktr.ee/coegi"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors font-medium"
           >
             Coegi

@@ -31,13 +31,27 @@ const certificates: {
   },
 ];
 
+const sectionAnimation = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
+
+const cardAnimation = (index: number) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.4, delay: index * 0.1 },
+});
+
+// Create Map for O(1) skill lookups
+const skillsMap = new Map(allSkills.map((s) => [s.name, s]));
+
 export function Certificates() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...sectionAnimation}
       id="certificates"
       className="scroll-mt-16"
     >
@@ -46,10 +60,7 @@ export function Certificates() {
         {certificates.map((certificate, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
+            {...cardAnimation(index)}
             className="flex flex-col gap-4 p-6 border rounded-xl bg-card hover:bg-accent/5 transition-colors"
           >
             <div className="flex items-start justify-between">
@@ -61,9 +72,9 @@ export function Certificates() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-auto">
+            <div className="flex flex-wrap gap-2 mb-auto lg:mt-auto lg:mb-0">
               {certificate.tags.map((tag) => {
-                const skill = allSkills.find((s) => s.name === tag);
+                const skill = skillsMap.get(tag);
                 return (
                   <Badge
                     key={tag}
@@ -94,7 +105,11 @@ export function Certificates() {
               asChild
               className="w-full mt-2"
             >
-              <Link href={certificate.link} target="_blank">
+              <Link
+                href={certificate.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 View Credential
               </Link>

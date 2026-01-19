@@ -6,27 +6,29 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
+const fadeInAnimation = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
+
 export function Hero() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="pt-20"
-    >
+    <motion.section {...fadeInAnimation} className="pt-20">
       <Avatar className="h-16 w-16 md:h-20 md:w-20">
         <AvatarImage src={"/pfp.jpg"} alt="Maciej" />
         <AvatarFallback>M</AvatarFallback>
       </Avatar>
       <div className="flex flex-col gap-4">
-        <h1 className="text-5xl tracking-tighter">
-          Hello, I'm <span className="text-sky-500">Maciej</span>
+        <h1 className="text-5xl tracking-tighter text-balance">
+          Hello, I&apos;m <span className="text-sky-500">Maciej</span>
         </h1>
         <p className="text-paragraph">
           I am a Frontend Developer at{" "}
           <Link
             href="https://solvro.pwr.edu.pl/"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors font-medium"
           >
             Solvro Science Club
@@ -35,6 +37,7 @@ export function Hero() {
           <Link
             href="https://pwr.edu.pl/en/"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors font-medium"
           >
             Wrocław University of Science and Technology
@@ -48,9 +51,13 @@ export function Hero() {
           size={"lg"}
           asChild
         >
-          <Link href="https://github.com/mejsiejdev" target="_blank">
-            <div className="relative h-5 w-5">
-              <Image src="/logo/github.svg" alt="GitHub" fill />
+          <Link
+            href="https://github.com/mejsiejdev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="relative h-5 w-5" aria-hidden="true">
+              <Image src="/logo/github.svg" alt="" fill sizes="20px" />
             </div>
             View my profile on GitHub
           </Link>
@@ -63,9 +70,10 @@ export function Hero() {
           <Link
             href="https://www.linkedin.com/in/maciej-malinowski-8a5807239/"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <div className="relative h-5 w-5">
-              <Image src="/logo/linkedin.png" alt="LinkedIn" fill />
+            <div className="relative h-5 w-5" aria-hidden="true">
+              <Image src="/logo/linkedin.png" alt="" fill sizes="20px" />
             </div>
             View my profile on LinkedIn
           </Link>
