@@ -29,7 +29,7 @@ export function Hero() {
             href="https://solvro.pwr.edu.pl/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors font-medium"
+            className="hover:text-primary font-medium transition-colors"
           >
             Solvro Science Club
           </Link>{" "}
@@ -38,16 +38,16 @@ export function Hero() {
             href="https://pwr.edu.pl/en/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors font-medium"
+            className="hover:text-primary font-medium transition-colors"
           >
             Wrocław University of Science and Technology
           </Link>
           .
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl items-center justify-start">
+      <div className="grid max-w-xl grid-cols-1 items-center justify-start gap-4 sm:grid-cols-2">
         <Button
-          className="hover:bg-[#772f9d] bg-[#933ac3] text-white"
+          className="bg-[#933ac3] text-white hover:bg-[#772f9d]"
           size={"lg"}
           asChild
         >
@@ -63,7 +63,7 @@ export function Hero() {
           </Link>
         </Button>
         <Button
-          className="bg-[#0A66C2] hover:bg-[#0856A3] text-white"
+          className="bg-[#0A66C2] text-white hover:bg-[#0856A3]"
           size={"lg"}
           asChild
         >

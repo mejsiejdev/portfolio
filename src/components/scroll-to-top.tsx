@@ -40,12 +40,12 @@ export function ScrollToTop() {
       {isVisible && (
         <motion.div
           {...buttonAnimation}
-          className="fixed bottom-8 right-8 z-50"
+          className="fixed right-8 bottom-8 z-50"
         >
           <Button
             size="icon"
             onClick={scrollToTop}
-            className="rounded-full shadow-lg h-12 w-12 cursor-pointer"
+            className="h-12 w-12 cursor-pointer rounded-full shadow-lg"
             aria-label="Scroll to top"
           >
             <ArrowUp className="size-6" />

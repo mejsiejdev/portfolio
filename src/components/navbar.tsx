@@ -25,15 +25,15 @@ const routes = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-4 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full border bg-background/80 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center pl-2.5 sm:pl-6 pr-2.5 gap-2 sm:gap-4">
-        <nav className="hidden sm:flex items-center space-x-6 text-sm font-medium">
+    <header className="bg-background/80 supports-[backdrop-filter]:bg-background/60 fixed top-4 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full border shadow-md backdrop-blur">
+      <div className="flex h-14 items-center gap-2 pr-2.5 pl-2.5 sm:gap-4 sm:pl-6">
+        <nav className="hidden items-center space-x-6 text-sm font-medium sm:flex">
           {routes.map((route) => (
             <Link
               key={route.href}
               href={route.href}
               target={route.target}
-              className="transition-colors hover:text-foreground/80 text-foreground/60 whitespace-nowrap"
+              className="hover:text-foreground/80 text-foreground/60 whitespace-nowrap transition-colors"
             >
               {route.label}
             </Link>
@@ -41,8 +41,8 @@ export function Navbar() {
         </nav>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="sm:hidden gap-0">
-              <Menu className="h-[1.2rem] w-[1.2rem] mr-2" />
+            <Button variant="outline" className="gap-0 sm:hidden">
+              <Menu className="mr-2 h-[1.2rem] w-[1.2rem]" />
               Menu
             </Button>
           </DropdownMenuTrigger>

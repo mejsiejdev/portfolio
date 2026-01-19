@@ -18,7 +18,7 @@ export function About() {
       className="container flex flex-col gap-6"
     >
       <h2>About Me</h2>
-      <div className="space-y-6 text-paragraph">
+      <div className="text-paragraph space-y-6">
         <p>
           I am a passionate Frontend Developer with a keen eye for design and a
           love for clean, efficient code. My journey in web development started
@@ -33,7 +33,7 @@ export function About() {
             href="https://solvro.pwr.edu.pl/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors font-medium"
+            className="hover:text-primary font-medium transition-colors"
           >
             Solvro Science Club
           </Link>
@@ -42,7 +42,7 @@ export function About() {
             href="https://pwr.edu.pl/en/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors font-medium"
+            className="hover:text-primary font-medium transition-colors"
           >
             Wrocław University of Science and Technology
           </Link>
@@ -55,7 +55,7 @@ export function About() {
             href="https://linktr.ee/coegi"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors font-medium"
+            className="hover:text-primary font-medium transition-colors"
           >
             Coegi
           </Link>

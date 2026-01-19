@@ -54,7 +54,7 @@ export function Contact() {
     <motion.section {...fadeInAnimation} id="contact">
       <h2>Get in Touch</h2>
       <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <Controller
             name="name"
             control={form.control}
