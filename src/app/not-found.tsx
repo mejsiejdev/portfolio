@@ -10,7 +10,7 @@ export default function NotFound() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] gap-6 text-center"
+      className="flex min-h-[calc(100vh-200px)] flex-col items-center justify-center gap-6 text-center"
     >
       <div className="sp">
         <h1 className="text-9xl">404</h1>

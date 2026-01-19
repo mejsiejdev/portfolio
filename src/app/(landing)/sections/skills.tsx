@@ -38,7 +38,7 @@ export function Skills() {
                 >
                   <Badge
                     variant="outline"
-                    className={`text-lg font-medium py-2 px-4 transition-colors cursor-pointer gap-2 ${skill.color}`}
+                    className={`cursor-pointer gap-2 px-4 py-2 text-lg font-medium transition-colors ${skill.color}`}
                   >
                     <Image
                       src={skill.icon!}

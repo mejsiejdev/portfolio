@@ -79,7 +79,7 @@ export function Projects() {
   return (
     <motion.section {...sectionAnimation} id="projects">
       <h2>Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -106,7 +106,7 @@ export function Projects() {
               <h3>{project.name}</h3>
               <p className="text-paragraph">{project.description}</p>
             </div>
-            <div className="flex flex-wrap gap-2 mb-auto lg:mt-auto lg:mb-0">
+            <div className="mb-auto flex flex-wrap gap-2 lg:mt-auto lg:mb-0">
               {project.tags.map((tag) => {
                 const skill = skillsMap.get(tag);
                 return (
@@ -139,7 +139,7 @@ export function Projects() {
                 );
               })}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <Button
                 size="lg"
                 asChild

@@ -56,23 +56,23 @@ export function Certificates() {
       className="scroll-mt-16"
     >
       <h2>Certificates</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
         {certificates.map((certificate, index) => (
           <motion.div
             key={index}
             {...cardAnimation(index)}
-            className="flex flex-col gap-4 p-6 border rounded-xl bg-card hover:bg-accent/5 transition-colors"
+            className="bg-card hover:bg-accent/5 flex flex-col gap-4 rounded-xl border p-6 transition-colors"
           >
             <div className="flex items-start justify-between">
               <div className="space-y-1">
                 <h3>{certificate.name}</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   {certificate.issuer} • {certificate.date}
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-auto lg:mt-auto lg:mb-0">
+            <div className="mb-auto flex flex-wrap gap-2 lg:mt-auto lg:mb-0">
               {certificate.tags.map((tag) => {
                 const skill = skillsMap.get(tag);
                 return (
@@ -103,7 +103,7 @@ export function Certificates() {
               size="lg"
               variant={"outline"}
               asChild
-              className="w-full mt-2"
+              className="mt-2 w-full"
             >
               <Link
                 href={certificate.link}
