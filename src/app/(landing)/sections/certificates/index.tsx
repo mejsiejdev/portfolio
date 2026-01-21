@@ -3,6 +3,8 @@ import { Certificate } from "./certificate";
 
 import { API_URL } from "@/lib/api";
 
+const revalidate = 3600;
+
 export interface Certificate {
   id: string;
   name: string;
@@ -13,7 +15,9 @@ export interface Certificate {
 }
 
 export async function Certificates() {
-  const data = await fetch(`${API_URL}/certificates`);
+  const data = await fetch(`${API_URL}/certificates`, {
+    next: { revalidate },
+  });
   const certificates = (await data.json()) as Certificate[];
   return (
     <AnimatedSection id="certificates" className="scroll-mt-16">
