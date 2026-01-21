@@ -1,0 +1,32 @@
+import { AnimatedSection } from "@/components/animated-section";
+import { Certificate } from "./certificate";
+
+import { API_URL } from "@/lib/api";
+
+export interface Certificate {
+  id: string;
+  name: string;
+  issuer: string;
+  date: string;
+  tags: string[];
+  link: string;
+}
+
+export async function Certificates() {
+  const data = await fetch(`${API_URL}/certificates`);
+  const certificates = (await data.json()) as Certificate[];
+  return (
+    <AnimatedSection id="certificates" className="scroll-mt-16">
+      <h2>Certificates</h2>
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {certificates.map((certificate, index) => (
+          <Certificate
+            key={certificate.name}
+            index={index}
+            certificate={certificate}
+          />
+        ))}
+      </div>
+    </AnimatedSection>
+  );
+}
