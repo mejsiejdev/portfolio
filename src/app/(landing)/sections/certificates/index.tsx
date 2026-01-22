@@ -20,9 +20,9 @@ export async function Certificates() {
   });
   const certificates = (await data.json()) as Certificate[];
   return (
-    <AnimatedSection id="certificates" className="scroll-mt-16">
+    <AnimatedSection id="certificates">
       <h2>Certificates</h2>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {certificates.map((certificate, index) => (
           <Certificate
             key={certificate.name}
