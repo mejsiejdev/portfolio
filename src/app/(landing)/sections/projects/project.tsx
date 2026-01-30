@@ -38,18 +38,18 @@ export function Project({
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-700">
         <Image
-          src={`${API_URL}/${project.image}`}
+          src={`${API_URL}${project.image}`}
           alt={project.name}
           className="object-cover dark:hidden"
           fill
-          //sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <Image
-          src={`${API_URL}/${project.image_dark ? project.image_dark : project.image}`}
+          src={`${API_URL}${project.image_dark ? project.image_dark : project.image}`}
           alt={project.name}
           className="hidden object-cover dark:block"
           fill
-          //sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
       <div className="space-y-2">
