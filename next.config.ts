@@ -12,8 +12,14 @@ const nextConfig: NextConfig = {
         port: "8000",
         pathname: "/static/images/**",
       },
-      ...(process.env.NEXT_PUBLIC_API_URL
-        ? [new URL(`${process.env.NEXT_PUBLIC_API_URL}/static/images/**`)]
+      ...(process.env.NEXT_PUBLIC_IMAGE_HOSTNAME
+        ? [
+            {
+              protocol: "https" as const,
+              hostname: process.env.NEXT_PUBLIC_IMAGE_HOSTNAME,
+              pathname: "/static/images/**",
+            },
+          ]
         : []),
     ],
   },
