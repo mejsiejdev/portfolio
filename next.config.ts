@@ -1,12 +1,21 @@
 import type { NextConfig } from "next";
-import { API_URL } from "@/lib/api";
 
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
     dangerouslyAllowLocalIP: process.env.NODE_ENV !== "production",
-    remotePatterns: [new URL(`${API_URL}/static/images/*`)],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+        pathname: "/static/images/**",
+      },
+      ...(process.env.NEXT_PUBLIC_API_URL
+        ? [new URL(`${process.env.NEXT_PUBLIC_API_URL}/static/images/**`)]
+        : []),
+    ],
   },
 };
 
