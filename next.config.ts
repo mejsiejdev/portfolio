@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
           ]
         : []),
     ],
+    unoptimized: process.env.NODE_ENV === "production",
   },
 };
 
