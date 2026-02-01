@@ -11,7 +11,6 @@ import { skills as allSkills } from "@/data/skills";
 import type { Project as ProjectType } from "@/app/(landing)/sections/projects";
 
 import { cn } from "@/lib/utils";
-import { API_URL } from "@/lib/api";
 
 const cardAnimation = (index: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -38,14 +37,14 @@ export function Project({
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-700">
         <Image
-          src={`${API_URL}${project.image}`}
+          src={project.image}
           alt={project.name}
           className="object-cover dark:hidden"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <Image
-          src={`${API_URL}${project.image_dark ? project.image_dark : project.image}`}
+          src={project.image_dark || project.image}
           alt={project.name}
           className="hidden object-cover dark:block"
           fill

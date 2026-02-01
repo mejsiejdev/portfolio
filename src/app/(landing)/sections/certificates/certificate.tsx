@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { skills as allSkills } from "@/data/skills";
 import type { Certificate as CertificateType } from "@/app/(landing)/sections/certificates";
+import { format } from "date-fns";
 
 const cardAnimation = (index: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -25,6 +26,7 @@ export function Certificate({
   certificate: CertificateType;
   index: number;
 }) {
+  const formattedDate = format(new Date(certificate.date), "MMMM y");
   return (
     <motion.div
       key={certificate.id}
@@ -35,7 +37,7 @@ export function Certificate({
         <div className="space-y-1">
           <h3>{certificate.name}</h3>
           <p className="text-muted-foreground text-sm">
-            {certificate.issuer} • {certificate.date}
+            {certificate.issuer} • {formattedDate}
           </p>
         </div>
       </div>

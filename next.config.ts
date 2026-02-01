@@ -4,25 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    dangerouslyAllowLocalIP: process.env.NODE_ENV !== "production",
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "8000",
-        pathname: "/static/images/**",
+        protocol: "https" as const,
+        hostname: process.env.NEXT_PUBLIC_IMAGE_HOSTNAME!,
+        pathname: "/storage/v1/object/public/images/**",
       },
-      ...(process.env.NEXT_PUBLIC_IMAGE_HOSTNAME
-        ? [
-            {
-              protocol: "https" as const,
-              hostname: process.env.NEXT_PUBLIC_IMAGE_HOSTNAME,
-              pathname: "/static/images/**",
-            },
-          ]
-        : []),
     ],
-    unoptimized: process.env.NODE_ENV === "production",
   },
 };
 
