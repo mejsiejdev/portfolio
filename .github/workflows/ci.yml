@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  lint-and-build:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,6 +36,9 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
+
+      - name: Run Knip
+        run: npm run knip:ci
 
       - name: Build
         run: npm run build

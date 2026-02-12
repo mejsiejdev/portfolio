@@ -1,4 +1,4 @@
-export interface Skill {
+interface Skill {
   name: string;
   icon?: string;
   color: string;
@@ -63,7 +63,3 @@ export const skills: Skill[] = [
     href: "https://www.python.org",
   },
 ];
-
-export const getSkill = (name: string): Skill | undefined => {
-  return skills.find((skill) => skill.name === name);
-};
