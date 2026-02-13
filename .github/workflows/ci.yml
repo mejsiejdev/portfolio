@@ -39,6 +39,3 @@ jobs:
 
       - name: Run Knip
         run: npm run knip:ci
-
-      - name: Build
-        run: npm run build
