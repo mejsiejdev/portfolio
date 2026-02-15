@@ -39,3 +39,12 @@ jobs:
 
       - name: Run Knip
         run: npm run knip:ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.15.x
+
+      - name: Run Lighthouse CI
+        run: lhci autorun
