@@ -51,3 +51,6 @@ jobs:
 
       - name: Run Lighthouse CI
         run: lhci autorun
+        env:
+          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_IMAGE_HOSTNAME: ${{ vars.NEXT_PUBLIC_IMAGE_HOSTNAME }}
