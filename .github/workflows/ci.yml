@@ -46,11 +46,10 @@ jobs:
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
           NEXT_PUBLIC_IMAGE_HOSTNAME: ${{ vars.NEXT_PUBLIC_IMAGE_HOSTNAME }}
 
-      - name: Install Lighthouse CI
-        run: npm install -g @lhci/cli@0.15.x
-
       - name: Run Lighthouse CI
-        run: lhci autorun
+        run: |
+          npm install -g @lhci/cli@0.15.x
+          lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
