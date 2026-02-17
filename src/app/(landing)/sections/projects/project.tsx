@@ -75,7 +75,7 @@ export function Project({
                 {skill?.icon && (
                   <Image
                     src={skill.icon}
-                    alt={skill.name}
+                    alt=""
                     width={14}
                     height={14}
                     className="h-3.5 w-3.5"

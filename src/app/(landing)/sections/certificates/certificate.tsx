@@ -56,7 +56,7 @@ export function Certificate({
               {skill?.icon && (
                 <Image
                   src={skill.icon}
-                  alt={skill.name}
+                  alt=""
                   width={12}
                   height={12}
                   className="h-3 w-3"
